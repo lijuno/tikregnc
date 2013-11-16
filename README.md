@@ -7,15 +7,18 @@ y(t) = \int_0^\infty N_T(f) f \exp(-ft) df
 
 where y(t) is the input data (e.g., experimental data), and N_T(f) is the spectrum to be calculated in f-domain. 
 
+
+The regularization parameter can be either provided externally, or determined heuristically by L-curve criterion or Morozov discrepancy principle. Three different discretization schemes, i.e., linear, log, and Gauss-Laguerre, are available. 
+
 Files: 
 
 * tikregnc.m: function that solves for solutions to Tikhonov regularization with non-negativity constraint
 
 * test_tiknc.m: the test script for tikregnc.m
 
-* ncsolve.m: linear non-negativty constrained problem solver
+* ncsolve.m: linear non-negativty constrained problem solver; a linear programming solver is used
 
-* get_A: get discretized matrix A
+* get_A: get discretized matrix A; linear, log, Gaussian-Laguerre quadrature discretization are available
 
 * t_func: generates time-domain test data from a Gaussian spectrum in f-space
 
