@@ -1,9 +1,11 @@
 README
 ======
 
-Here are my MATLAB sample codes for Tikhonov regularization with non-negativity constraint. The relationship between y(t) and N_T(f) is 
+Here are my MATLAB code for Tikhonov regularization with non-negativity constraint. The relationship between y(t) and N_T(f) is 
 
+```latex
 y(t) = \int_0^\infty N_T(f) f \exp(-ft) df
+```
 
 where y(t) is the input data (e.g., experimental data), and N_T(f) is the spectrum to be calculated in f-domain. 
 
