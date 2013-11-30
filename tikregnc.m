@@ -12,7 +12,7 @@ function varargout = tikregnc(t, b, dconfig, rconfig)
 %       dconfig.param1: [lower_bound, upper_bound] for 'linear' or 'log' type; 
 %                       or scaling factor (a scalar) for 'glq' type
 %   rconfig: regularization configuration, a struct
-%         rconfig.type: 'None', 'Morozov' (Morozov principle), 'L-curve1' (L-curve criterion)
+%         rconfig.type: 'External', 'Morozov' (Morozov principle), 'L-curve1' (L-curve criterion)
 %         rconfig.order: L_order (the order of L matrix
 %         rconfig.param1: depending on rconfig.type as follows
 %             'External' type: regularzation parameter (a scalar)
