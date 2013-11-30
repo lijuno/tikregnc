@@ -45,6 +45,7 @@ L = full(get_l(length(f), rconfig.order));
 if strcmpi(rconfig.type, 'External')
     % Use the externally provided regularization parameter
     [sol] = ncsolve(A, b, rconfig.param1, L);
+    lambda_opt = rconfig.param1;   % for the completeness of the output args
     
 elseif strcmpi(rconfig.type, 'Morozov')
     % Use Morozov discrepancy principle to determine the regularization
