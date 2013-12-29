@@ -1,11 +1,18 @@
 function varargout = ncsolve(A, b, lambda, L)
+% Examples: 
+%    X = ncsolve(A, b, lambda, L);
+%    [X, res, smn] = ncsolve(A, b, lambda, L);
 % Solve the linear least square program with x>=0 constraint
 % min ||C*x -d|| subject to A*x<=b, A_eq*x = b_eq, lb<=x<=ub
 % Input args: 
-%    A: 
-%    b: data (the transient current
+%    A: Discretization matrix
+%    b: data (the transient current)
 %    lambda: the regularization parameter
 %    L: derivative matrix
+% (Optional) output args: 
+%    X: the solution
+%    rmn: fitting residue
+%    smn: smoothness
 
 x0 = zeros(size(L, 2),1);  % default 
 N = size(A, 2);
