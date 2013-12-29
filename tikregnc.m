@@ -32,6 +32,9 @@ function varargout = tikregnc(t, b, dconfig, rconfig)
 
 glq_alpha_ratio_tol = 1e-4;  % The tolerence of searching for the alpha value in 'glq'
 
+t = force_column_vector(t);
+b = force_column_vector(b);
+
 % Get discretization matrix A and f-space axis f
 if strcmpi(dconfig.type, 'linear') || strcmpi(dconfig.type, 'log')
     [A, f] = get_A(t, dconfig.type, dconfig.N, dconfig.param1);
@@ -131,6 +134,14 @@ if nargout >=1
     end
 end
 
+end
+
+
+function v_out = force_column_vector(v_in)
+% Convert the input to column vector if it is not
+if ~iscolumn(v_in)
+    v_out = v_in';
+end
 end
 
 function y = lambda_func(lambda, A, b, L, delta_b)
