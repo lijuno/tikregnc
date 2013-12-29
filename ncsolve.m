@@ -1,4 +1,4 @@
-function varargout = solve_x2(A, b, lambda, L)
+function varargout = ncsolve(A, b, lambda, L)
 % Solve the linear least square program with x>=0 constraint
 % min ||C*x -d|| subject to A*x<=b, A_eq*x = b_eq, lb<=x<=ub
 % Input args: 
