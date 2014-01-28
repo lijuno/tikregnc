@@ -141,6 +141,8 @@ function v_out = force_column_vector(v_in)
 % Convert the input to column vector if it is not
 if ~iscolumn(v_in)
     v_out = v_in';
+else
+    v_out = v_in; 
 end
 end
 
