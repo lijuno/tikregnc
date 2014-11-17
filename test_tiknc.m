@@ -1,4 +1,4 @@
-% Test Tikhonov regularization 
+% Test Tikhonov regularization with non-negativity constraint
 
 clear
 close all
@@ -40,15 +40,26 @@ rstruct = struct();
 % dstruct.param1 = 1;
 dstruct.type = 'log';
 dstruct.N = 100;
-dstruct.param1 = [0.1, 500];
+dstruct.param1 = 1;
+dstruct.param2 = [0.1, 500];
 
 % Regularization configuration
 rstruct.type = 'L-curve1';
 rstruct.order = 0;
 rstruct.param1 = 0;
-% rstruct.type = 'Morozov';
-% rstruct.order = 2;
-% rstruct.param1 = delta_b ;
+
+
+% rstruct.type = 'OCV-ext';
+% rstruct.order = 0;
+% lambda_min = 5e-4 * dstruct.param1; 
+% lambda_max = 1e-2 * dstruct.param1; 
+% n_lambda = 10; 
+% rstruct.param1 = logspace(log10(lambda_min), log10(lambda_max), n_lambda); 
+% rstruct.param2 = 4;  % leave-x-out cross-validation
+ 
+% rstruct.type = 'External';
+% rstruct.order = 0;
+% rstruct.param1 = 0.144;  % external regularization parameter
 
 [sol, f, A, lambda_opt] = tikregnc(t, b, dstruct, rstruct);
 

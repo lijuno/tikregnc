@@ -1,5 +1,6 @@
 function [x, w] = gen_laguerre_rule2 (order, alpha, a, b)
 % [x, w] = gen_laguerre_rule2 (order, alpha, a, b)
+% This script is modified from http://people.sc.fsu.edu/~jburkardt/m_src/gen_laguerre_rule/gen_laguerre_rule.html
 % 
 % This program computes a standard or exponentially weighted generalized Gauss-Laguerre quadrature rule.
 % Integral ( 0 <= x < oo ) |x-a|^ALPHA exp(-B*(x-a)) f(x) dx
